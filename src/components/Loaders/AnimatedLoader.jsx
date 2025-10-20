@@ -3,13 +3,22 @@ import styled from "styled-components";
 const AnimatedLoader = () => {
   return (
     <StyledWrapper>
-      <p>Loading...</p>
+      <p className="loading-words">
+        We currently use the free tier of Render.com, <br></br>Please allow a
+        moment for the page to load.
+      </p>
       <div className="spinner" />
     </StyledWrapper>
   );
 };
 
 const StyledWrapper = styled.div`
+  .loading-words {
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    color: #888;
+  }
   .spinner {
     box-shadow: 0 0 0 7px #ff6b6b, inset 0 0 0 1px #ff6b6b;
     position: relative;

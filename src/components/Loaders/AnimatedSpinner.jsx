@@ -10,6 +10,7 @@ const AnimatedSpinner = () => {
 };
 
 const StyledWrapper = styled.div`
+
   .loader {
     border: 4px solid rgba(0, 0, 0, 0.1);
     border-left-color: transparent;
