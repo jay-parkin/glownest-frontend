@@ -51,8 +51,8 @@ const SignIn = () => {
 
         refreshUserFromToken();
 
-        // Redirect to the homepage after sign-in
-        navigate("/");
+        // Redirect to the profile page after sign-in
+        navigate("/profile");
       } else {
         setStatus(data.message);
       }

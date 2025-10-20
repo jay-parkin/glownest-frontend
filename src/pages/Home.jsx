@@ -1,6 +1,7 @@
 import "../styles/HomePage.css";
 import ProductItem from "../components/ProductItem";
 import BannerCarousel from "../components/BannerCarousel.jsx";
+import Navbar from "../components/Navbar.jsx";
 
 const Home = () => {
   return (

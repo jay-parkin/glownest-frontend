@@ -12,13 +12,23 @@ import CheckOut from "./pages/CheckOut.jsx";
 import OrderConfirmation from "./pages/OrderConfirmation.jsx";
 import Home from "./pages/Home.jsx";
 import ProductListPage from "./pages/ProductListPage.jsx";
+import MainLayout from "./layout/MainLayout.jsx";
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
+        <Route element={<MainLayout />}>
+          <Route index element={<Home />} />
+          <Route path="/search" element={<SearchResultsPage />} />
+          <Route path="/products" element={<ProductListPage />} />
+          <Route path="/login" element={<SignInPage />} />
+          <Route path="/register" element={<SignUpPage />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/reset-password/:token" element={<ResetPass />} />
+        </Route>
+
         <Route
-          path="/"
           element={
             <ProtectedRoute>
               <ProtectedLayout />
@@ -32,14 +42,6 @@ const App = () => {
             element={<OrderConfirmation />}
           />
         </Route>
-
-        <Route index element={<Home />} />
-        <Route path="/search" element={<SearchResultsPage />} />
-        <Route path="/products" element={<ProductListPage />} />
-        <Route path="/login" element={<SignInPage />} />
-        <Route path="/register" element={<SignUpPage />} />
-        <Route path="/forgot-password" element={<ForgotPassword />} />
-        <Route path="/reset-password/:token" element={<ResetPass />} />
       </Routes>
     </BrowserRouter>
   );
