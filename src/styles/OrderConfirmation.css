@@ -1,0 +1,107 @@
+.order-confirm-page {
+  display: flex;
+  justify-content: center;
+}
+
+.confirmation-card {
+  background-color: #fff;
+  padding: 1rem;
+  margin: 2rem;
+  border-width: thin;
+  border-color: #aeb5c2;
+  border-style: solid;
+  border-radius: 0.5rem;
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+}
+
+.check-container {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ width: 5rem;
+ height: 5rem;
+ border-radius: 50%;
+ background-color: #10b981;
+ margin: 0 auto 1rem;
+}
+
+.check-icon {
+  font-size: 3rem;
+  color: #ffffff;
+}
+
+.message {
+  margin-top: 1rem;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.qty-text {
+  text-align: left;
+  color: #6b7280;
+}
+
+.order-item {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.order-img {
+  width: 60px;
+  margin-right: 1rem;
+}
+
+.summary-lines, .total-line {
+  margin: 0.5rem 0;
+}
+
+.total-line {
+  font-size: 1.2rem;
+}
+
+.delivery-payment {
+  margin-bottom: 1rem;
+}
+
+.conf-buttons {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-evenly;
+}
+
+.continue-shopping-btn {
+  flex: 1;
+  background-color: #ff6b6b;
+  color: #ffffff;
+}
+
+.view-order-details-btn {
+  flex: 1;
+  color: #000000;
+}
+
+@media (max-width: 768px) {
+  .confirmation-card {
+    padding: 1.25rem;
+  }
+
+  .order-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .order-img {
+    margin: 0 auto 0.5rem;
+  }
+
+  .conf-buttons {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}

@@ -1,0 +1,136 @@
+.profile-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2rem 1rem;
+  padding-top: 100px;
+  box-sizing: border-box;
+}
+
+.sidebar {
+  flex: 0 0 250px;
+  min-width: 250px;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 1.5rem 1rem;
+  height: fit-content;
+}
+
+.sidebar .profile-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.sidebar .avatar {
+  background-color: #f87171;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.5rem;
+  width: 64px;
+  height: 64px;
+  line-height: 64px;
+  border-radius: 50%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.sidebar .email {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.sidebar .nav-link {
+  display: block;
+  width: 100%;
+  white-space: nowrap;
+  padding: 0.5rem 1rem;
+  color: #111827;
+  font-weight: 500;
+}
+
+.sidebar .nav-link:hover {
+  background-color: #e0e3e9;
+  color: #1f2937;
+  border-radius: 0.375rem;
+  cursor: pointer;
+}
+
+.sidebar .nav-link.active {
+  background-color: #f87171;
+  color: #fff;
+  border-radius: 0.375rem;
+}
+
+.account-details {
+  flex-grow: 1;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  border: 1px solid #e5e7eb;
+  height: fit-content;
+}
+
+.account-details h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.account-details .form-group label {
+  font-weight: 500;
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+}
+
+.account-details .form-check-label {
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.profile-btns {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+.btn.primary.success {
+  filter: brightness(1.05);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05) inset;
+}
+
+.btn-view {
+  font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+  html,
+  body,
+  #root {
+    height: auto;
+  }
+
+  .profile-container {
+    flex-direction: column;
+    padding: 1rem;
+    min-height: auto;
+  }
+
+  .sidebar {
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  .account-details {
+    padding: 1.5rem;
+    width: 100%;
+  }
+
+  .btn-save {
+    width: 100%;
+  }
+
+  .danger-zone .btn {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}

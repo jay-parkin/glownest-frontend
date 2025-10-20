@@ -1,0 +1,155 @@
+.checkout-page {
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; */
+  padding: 2rem 30px;
+}
+
+.checkout-steps {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+  gap: 1rem;
+}
+
+.checkout-steps li {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  padding-bottom: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.checkout-steps li.completed {
+  color: #6b7280;
+}
+
+.checkout-steps li.active {
+  color: #111827;
+  font-weight: 600;
+}
+
+.checkout-steps li.completed::after,
+.checkout-steps li.active::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background-color: #f87171;
+  bottom: 0;
+  left: 0;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+.section button.shipping-btn {
+  display: flex;
+  margin-left: auto;
+  gap: 0.5rem;
+  color: #f4f5f7;
+}
+
+.accordion-header {
+  width: 100%;
+  text-align: left;
+  background: #f3f4f6;
+  color: #010102;
+  border: none;
+  padding: 0.75rem 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 0.375rem;
+}
+
+.accordion-header:hover {
+  background-color: #e5e7eb;
+}
+
+.accordion-body {
+  border: 1px solid #e5e7eb;
+  border-top: none;
+  padding: 1rem;
+  border-radius: 0 0 0.375rem 0.375rem;
+}
+
+.card {
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  transition: box-shadow 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+}
+
+.btn-qty {
+  background-color: #f87171;
+  color: #fff;
+  border: none;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  min-width: 40px;
+  width: 40px;
+}
+
+.continue-btn {
+  margin-top: 1rem;
+  background-color: #f87171;
+  color: #fff;
+}
+
+.order-summary {
+  border-radius: 0.5rem;
+}
+
+.summary-item {
+  padding: 0.5rem 0;
+}
+
+.summary-img {
+  width: 50px;
+  margin-right: 0.75rem;
+}
+
+.total {
+  font-size: 1.1rem;
+}
+
+.place-order-btn {
+  background-color: #f87171;
+  width: 100%;
+  font-weight: bold;
+}
+
+.text {
+  color: #6b7280;
+}
+
+.term-text {
+  text-align: center;
+  color: #6b7280;
+  margin: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .checkout-steps {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .cart-item {
+    flex-direction: column;
+  }
+
+  .order-summary {
+    margin-top: 2rem;
+  }
+}

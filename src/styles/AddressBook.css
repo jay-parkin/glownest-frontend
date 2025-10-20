@@ -1,0 +1,163 @@
+.address-grid {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  gap: 16px;
+}
+
+.address-card {
+  width: 300px;
+  background: #fff;
+  border: 1px solid #ececec;
+  border-radius: 12px;
+  padding: 14px 14px 10px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02);
+}
+
+.address-card.default {
+  border-color: #f87171;
+  box-shadow: 0 0 0 2px #ecfdf5 inset;
+}
+
+.address-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.address-label {
+  font-size: 0.95rem;
+}
+
+.default-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #065f46;
+  background: #d1fae5;
+  border: 1px solid #a7f3d0;
+  border-radius: 999px;
+  padding: 2px 8px;
+}
+
+.address-lines {
+  line-height: 1.35;
+  font-style: normal;
+  color: #111;
+}
+
+.address-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.btn.link {
+  background: none;
+  border: none;
+  padding: 0;
+  color: #2563eb;
+  cursor: pointer;
+}
+.btn.link:hover {
+  text-decoration: underline;
+}
+.btn.link.danger {
+  color: #dc2626;
+}
+
+.address-form-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 18px;
+  background-color: #f9fafb;
+  color: #111;
+}
+
+.address-form-card .form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.field-row {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin: 0;
+}
+
+.field-row .field {
+  flex: 1 1 300px;
+}
+
+.field-row .field.full {
+  flex: 1 1 100%;
+}
+
+.address-form-card label {
+  display: block;
+  font-size: 0.92rem;
+  margin-bottom: 6px;
+  color: #111;
+}
+
+.address-form-card input,
+.address-form-card select,
+.address-form-card textarea {
+  width: 100%;
+  background-color: #fff !important;
+  color: #111 !important;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 10px 12px;
+  line-height: 1.2;
+  box-shadow: none;
+}
+
+.address-form-card input:focus,
+.address-form-card select:focus,
+.address-form-card textarea:focus {
+  outline: none;
+  border-color: #93c5fd;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.address-form-card input[type="checkbox"] {
+  accent-color: #2563eb;
+}
+
+.address-form-card .form-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-start;
+  margin-top: 4px;
+}
+
+.btn.primary {
+  background: #ef4444;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+}
+.btn.primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 640px) {
+  .field-row .field {
+    flex-basis: 100%;
+  }
+}

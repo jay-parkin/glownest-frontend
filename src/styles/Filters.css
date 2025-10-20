@@ -1,0 +1,158 @@
+.products-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 1.5rem;
+  margin: 10px;
+}
+
+.filters {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 1rem;
+  position: static;
+  height: fit-content;
+}
+
+.products-main {
+  min-width: 0;
+}
+
+.filters-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.filters-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin: 0.75rem 0;
+}
+
+.filters-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.filters input,
+.filters select {
+  border: 1px solid #e3e3e3;
+  border-radius: 8px;
+  padding: 0.5rem 0.6rem;
+  background-color: #fdd5d5;
+  color: #333;
+}
+
+.filters select {
+  height: 100px;
+}
+
+.link-btn {
+  background: none;
+  border: none;
+  color: #ff6b6b;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.pill-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  color: #333;
+}
+
+.pill {
+  border: 1px solid #e3e3e3;
+  border-radius: 999px;
+  padding: 0.3rem 0.7rem;
+  background: #fafafa;
+  cursor: pointer;
+  color: #333;
+}
+
+.pill.active {
+  border-color: #ff8b8b;
+  background: #ffe8e8;
+}
+
+.mobile-filter-toggle {
+  display: none;
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 1000;
+  padding: 0.6rem 1.2rem;
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 999px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.filters-drawer {
+  display: block;
+}
+.close-drawer {
+  display: none;
+}
+
+@media (max-width: 570px) {
+  .close-drawer {
+    display: block;
+    margin-left: auto;
+    font-size: 1.2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+  }
+}
+
+@media (max-width: 570px) {
+  .products-layout {
+    display: block;
+  }
+
+  .filters {
+    display: none;
+  }
+
+  .filters-drawer.open .filters {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    overflow-y: auto;
+    background: white;
+    padding: 2rem;
+    max-height: 100vh;
+    height: 100%;
+  }
+
+  .close-drawer {
+    margin-left: auto;
+    font-size: 1.2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .mobile-filter-toggle {
+    display: block;
+  }
+
+  .filters-drawer.open + .mobile-filter-toggle {
+    display: none !important;
+  }
+}
