@@ -123,6 +123,7 @@ function InnerPayment({ buildOrderPayload, BASE, authHeaders }) {
   return (
     <div className="card p-3">
       <h5 className="mb-2">Payment</h5>
+      <p>This payment method is just a simulation. Don't provide real payment information.</p>
       <CardElement options={{ hidePostalCode: true }} />
       {message && <div className="alert alert-danger mt-3">{message}</div>}
       <button

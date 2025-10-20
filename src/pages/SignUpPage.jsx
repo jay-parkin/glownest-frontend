@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import bg from "../assets/img/back.webp";
+import bg from "../assets/img/bg-01.png";
 
 import { useUser } from "../contexts/UserContext";
 

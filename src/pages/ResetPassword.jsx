@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
-import bg from "../assets/img/back.webp";
+import bg from "../assets/img/bg-01.png";
 
 // Styles
 import "../styles/AuthPage.css";

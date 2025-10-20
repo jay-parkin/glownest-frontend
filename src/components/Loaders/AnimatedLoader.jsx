@@ -3,6 +3,7 @@ import styled from "styled-components";
 const AnimatedLoader = () => {
   return (
     <StyledWrapper>
+      <p>Loading...</p>
       <div className="spinner" />
     </StyledWrapper>
   );
