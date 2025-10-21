@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
-import { useMemo } from "react";
+import { useMemo, useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useUser } from "../contexts/UserContext";
 import { useCart } from "../contexts/CartContext";
@@ -9,9 +9,9 @@ import SearchBar from "./SearchBar";
 import "../styles/Navbar.css";
 
 const Navbar = () => {
-  const { user, logout } = useUser(); // Currently unused but can be used for user-specific nav items
-
+  const { user, logout } = useUser();
   const { cart } = useCart();
+
   const cartCount = useMemo(
     () =>
       Array.isArray(cart)
@@ -19,6 +19,27 @@ const Navbar = () => {
         : 0,
     [cart]
   );
+
+  const [showSearch, setShowSearch] = useState(false);
+  const popRef = useRef(null);
+
+  useEffect(() => {
+    function onDocClick(e) {
+      if (!popRef.current) return;
+      if (!popRef.current.contains(e.target)) setShowSearch(false);
+    }
+    function onEsc(e) {
+      if (e.key === "Escape") setShowSearch(false);
+    }
+    if (showSearch) {
+      document.addEventListener("mousedown", onDocClick);
+      document.addEventListener("keydown", onEsc);
+    }
+    return () => {
+      document.removeEventListener("mousedown", onDocClick);
+      document.removeEventListener("keydown", onEsc);
+    };
+  }, [showSearch]);
 
   return (
     <nav
@@ -42,7 +63,10 @@ const Navbar = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <div
+          className="collapse navbar-collapse position-relative"
+          id="navbarSupportedContent"
+        >
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
               <NavLink
@@ -74,10 +98,9 @@ const Navbar = () => {
                 Profile
               </NavLink>
             </li>
-          
           </ul>
 
-          <div className="d-flex align-items-center gap-2">
+          <div className="d-none d-lg-flex align-items-center gap-2">
             <div className="cart-wrapper">
               <a href="/checkout" className="custom-link">
                 <i className="bi bi-cart3 cart-icon"></i>
@@ -90,6 +113,42 @@ const Navbar = () => {
             </div>
             <SearchBar initial="" />
           </div>
+
+          <div className="d-flex d-lg-none align-items-center gap-2 ms-auto">
+            <div className="cart-wrapper">
+              <a href="/checkout" className="custom-link">
+                <i className="bi bi-cart3 cart-icon"></i>
+                {cartCount > 0 && (
+                  <span className="cart-badge" style={{ fontSize: "0.75rem" }}>
+                    {cartCount}
+                  </span>
+                )}
+              </a>
+            </div>
+
+            <button
+              className="btn btn-light search-trigger"
+              aria-haspopup="true"
+              aria-expanded={showSearch}
+              aria-controls="gn-search-popover"
+              onClick={() => setShowSearch((s) => !s)}
+              title="Search"
+            >
+              <i className="bi bi-search" />
+            </button>
+          </div>
+
+          {showSearch && (
+            <div
+              id="gn-search-popover"
+              ref={popRef}
+              className="search-popover d-lg-none"
+              role="dialog"
+              aria-label="Site search"
+            >
+              <SearchBar initial="" autoFocus />
+            </div>
+          )}
         </div>
       </div>
     </nav>

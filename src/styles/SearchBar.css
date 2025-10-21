@@ -41,7 +41,7 @@
 
 .btn-submit {
   background-color: #f87171;
-  color: #fff;
+  color: #fdd5d5;
   font-weight: 500;
   border: none;
   border-radius: 0.375rem;
@@ -57,9 +57,14 @@
 }
 
 @media (max-width: 600px) {
+  .navbar .d-flex {
+    flex-direction: row;
+  }
+
   .search-text {
     display: none;
   }
+
   .search-icon {
     display: inline-block;
     font-size: 1rem;
