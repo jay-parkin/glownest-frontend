@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import {
   Elements,
@@ -110,7 +110,7 @@ function InnerPayment({ buildOrderPayload, BASE, authHeaders }) {
       // clean up cart and go to confirmation
       try {
         await clearCart();
-      } catch {}
+      } catch { /* ignore */ }
       sessionStorage.setItem("justPlacedOrder", "1");
       navigate(`/order-confirmation/${createdOrder._id}`);
     } catch (e) {

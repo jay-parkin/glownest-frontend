@@ -266,10 +266,7 @@ export default function CheckOut() {
                       );
                     })}
                     <div className="d-flex gap-2">
-                      <Link
-                        className="btn btn-outline-secondary"
-                        to="/account/addresses"
-                      >
+                      <Link className="btn btn-outline-secondary" to="/profile">
                         Manage addresses
                       </Link>
                       <button
